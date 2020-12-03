@@ -1,3 +1,5 @@
+#Given Sudoku board----------------------------------
+
 board = [[0,3,0,0,1,0,0,6,0], 
          [7,5,0,0,3,0,0,4,8],
          [0,0,6,9,8,4,3,0,0],
@@ -8,6 +10,8 @@ board = [[0,3,0,0,1,0,0,6,0],
          [6,8,0,0,9,0,0,1,5],
          [0,9,0,0,4,0,0,3,0] ]
 
+
+#Function to check number validity------------------
 
 def valid(bo,num,pos):
     #Checking rows
@@ -30,6 +34,8 @@ def valid(bo,num,pos):
     
     return True
 
+#Recursive funtion to solve the puzzle---------------
+
 def solve(bo):
     find = find_empty(bo)
     
@@ -51,6 +57,8 @@ def solve(bo):
     return False
 
 
+#Function to print the board------------------------
+
 def print_board(bo):
     for i in range (len(bo)):
         if i%3 == 0 and i != 0:
@@ -67,6 +75,8 @@ def print_board(bo):
                 print(str(bo[i][j]) + " ", end = "")
 
 
+#Function to find the empty block-------------------
+
 def find_empty(bo):
     for i in range(len(bo)):
         for j in range(len(bo[0])):
@@ -76,7 +86,8 @@ def find_empty(bo):
     return None
 
 
+print("-------------------------Given Board--------------------------------")
 print_board(board)
 solve(board)
-print("--------------------------------------------------------")
+print("------------------------Solved Board--------------------------------")
 print_board(board)
